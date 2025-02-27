@@ -2,12 +2,13 @@ package com.gmwapp.slv_g5.fragment
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.gmwapp.slv_g5.R
 import com.gmwapp.slv_g5.activities.MainActivity
 import com.gmwapp.slv_g5.databinding.FragmentBillBinding
@@ -21,12 +22,27 @@ class BillFragment : Fragment() {
 
     var btBuyNow: MaterialButton? = null
 
+    private var productName: String? = null
+    private var productPrice: String? = null
+    private var productImage: String? = null
+    private var productDescription: String? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentBillBinding.inflate(inflater, container, false)
         session = Session(requireContext())
+
+        if (arguments != null) {
+            productName = requireArguments().getString("product_name")
+            productPrice = requireArguments().getString("product_price")
+            productImage = requireArguments().getString("product_image")
+            productDescription = requireArguments().getString("product_description")
+
+            Log.d("ProductDetailsFragment", "Received Product Name: $productName")
+            Log.d("ProductDetailsFragment", "Received Product Price: $productPrice")
+        }
 
         val fragmentManager = parentFragmentManager
         val transaction = fragmentManager.beginTransaction()
@@ -51,6 +67,15 @@ class BillFragment : Fragment() {
             binding.llWaiting.setVisibility(View.GONE)
             binding.frame.setVisibility(View.VISIBLE)
         }, 2000)
+
+        // Load image using Glide
+        Glide.with(requireContext())
+            .load(productImage)
+            .placeholder(R.drawable.image_icon)
+            .into(binding.ivImage)
+
+        binding.tvName.setText(productName)
+        binding.tvPrice.setText(productPrice)
 
         binding.btnEditAddress.setOnClickListener({
             // Replace current fragment with billFragment

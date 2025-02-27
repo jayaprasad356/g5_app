@@ -67,7 +67,7 @@ public class CategoryAdapter extends BaseAdapter {
 
         // Set product details
         viewHolder.title.setText(product.getName());
-        viewHolder.price.setText("₹ " + product.getPrice());
+        viewHolder.price.setVisibility(View.GONE);
 
         // Load image using Glide
         Glide.with(context)

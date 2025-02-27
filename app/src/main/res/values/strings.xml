@@ -258,6 +258,7 @@
     <string name="refer_earnings">Refer Earnings</string>
     <string name="commission_earnings">Commission Earnings</string>
     <string name="my_orders">My Orders</string>
+    <string name="category">Category</string>
 
     <string-array name="my_spinner_values">
         <item>Select Amount</item>

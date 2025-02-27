@@ -377,6 +377,67 @@
                     "G Five Technologies is not responsible for any content, code or any other imprecision. G Five Technologies does not provide warranties or guarantees. In no event shall G Five Technologies be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other torts, arising out of or in connection with the use of the Service or the contents of the Service. The Company reserves the right to make additions, deletions, or modifications to the contents of the Service at any time without prior notice. The G Five Technologies Service and its contents are provided 'as is' and 'as available' without any warranty or representations of any kind, whether express or implied. G Five Technologies is a distributor and not a publisher of the content supplied by third parties; as such, G Five Technologies exercises no editorial control over such content and makes no warranty or representation as to the accuracy, reliability, or currency of any information, content, service or merchandise provided through or accessible via the G Five Technologies Service. Without limiting the foregoing, G Five Technologies specifically disclaims all warranties and representations in any content transmitted on or in connection with the G Five Technologies Service or on sites that may appear as links on the G Five Technologies Service, or in the products provided as a part of, or otherwise in connection with, the G Five Technologies Service, including without limitation any warranties of merchantability, fitness for a particular purpose or non-infringement of third party rights. No oral advice or written information was given by G Five Technologies or any of its affiliates, employees, officers, directors, agents, or the like will create a warranty. Price and availability information is subject to change without notice. Without limiting the foregoing, G Five Technologies does not warrant that the G Five Technologies Service will be uninterrupted, uncorrupted, timely, or error-free."
                 />
 
+            <com.gmwapp.slv_g5.helper.RichTestWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rtw_title="Shipping Policy"
+                app:rtw_onNumber="1."
+                app:rtw_subTitle="Estimated Delivery Time: "
+                app:rtw_description="7-15 working days for online orders."
+                />
+
+            <com.gmwapp.slv_g5.helper.RichTestWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rtw_title=""
+                app:rtw_onNumber="2."
+                app:rtw_subTitle="Tracking: "
+                app:rtw_description="Customers receive an email with tracking details once the order is shipped."
+                />
+
+            <com.gmwapp.slv_g5.helper.RichTestWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rtw_title=""
+                app:rtw_onNumber="3."
+                app:rtw_subTitle="Cancellation: "
+                app:rtw_description="Orders can be cancelled or changed within 24 hours of placement by contacting customer service."
+                />
+
+            <com.gmwapp.slv_g5.helper.RichTestWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rtw_title=""
+                app:rtw_onNumber="4."
+                app:rtw_subTitle="Shipping Charges: "
+                app:rtw_description=""
+                />
+
+            <com.gmwapp.slv_g5.helper.TitleAndContentText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title=""
+                app:description=
+                    "- For orders below Rs 999, shipping charges will apply"
+                />
+
+            <com.gmwapp.slv_g5.helper.TitleAndContentText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title=""
+                app:description=
+                    "- For all products above Rs 999, NO SHIPPING CHARGES will be applicable"
+                />
+
+            <com.gmwapp.slv_g5.helper.RichTestWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rtw_title=""
+                app:rtw_onNumber="5."
+                app:rtw_subTitle="Shipping Invoice: "
+                app:rtw_description="A detailed shipping invoice is provided with each order, outlining price, quantities, and shipping charges (if applicable."
+                />
+
             <com.gmwapp.slv_g5.helper.TitleAndContentText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

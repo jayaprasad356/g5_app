@@ -67,12 +67,25 @@ class ProductDetailsFragment : Fragment() {
             binding.frame.setVisibility(View.VISIBLE)
         }, 2000)
 
-        binding.btBuyNow.setOnClickListener({
-            // Replace current fragment with billFragment
+        binding.btBuyNow.setOnClickListener {
+            // Create instance of BillFragment
+            val billFragment = BillFragment()
+
+            // Create a Bundle to pass data
+            val bundle = Bundle()
+            bundle.putString("product_name", productName)
+            bundle.putString("product_price", productPrice)
+            bundle.putString("product_image", productImage)
+            bundle.putString("product_description", productDescription)
+            billFragment.arguments = bundle
+
+            // Perform fragment transaction
+            val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.Container, billFragment)
-            transaction.addToBackStack(null) // Optional: Add to backstack to allow going back
+            transaction.addToBackStack(null)
             transaction.commit()
-        })
+        }
+
 
         return binding.root
     }
