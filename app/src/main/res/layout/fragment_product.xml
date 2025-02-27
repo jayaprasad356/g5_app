@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_back"
+            android:contentDescription="@string/todo"
+            android:backgroundTint="@color/black"/>
+    </RelativeLayout>
+
+    <!-- Loading View -->
+    <LinearLayout
+        android:id="@+id/llWaiting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlToolbar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primaryColor"
+            app:indicatorSize="@dimen/_20sdp"
+            app:trackThickness="@dimen/_2sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/please_wait"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rvGiftVoucher"
+        android:layout_below="@+id/rlToolbar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:orientation="vertical"
+            android:background="@drawable/im_gift_bg"
+            android:gravity="center|bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offer upto 30%"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_bold"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="₹300 only"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_bold"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_25sdp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_bg"
+                android:text="Purchase"
+                android:textColor="@color/white"
+                android:padding="0dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_70sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                tools:ignore="HardcodedText"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llFrame"
+        android:visibility="visible"
+        android:layout_below="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/collection"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMyOrders"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_25sdp"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_bg"
+                android:text="My Orders"
+                android:textColor="@color/white"
+                android:padding="0dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/_8sdp"
+                tools:ignore="HardcodedText"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
+        </LinearLayout>
+
+        <!-- GridView inside NestedScrollView -->
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:numColumns="2"
+            android:verticalSpacing="@dimen/_5sdp"
+            android:horizontalSpacing="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            tools:ignore="MissingConstraints"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -4,20 +4,20 @@
         android:icon="@drawable/menu_home"
         android:title="@string/home" />
 
-    <item
-        android:id="@+id/gift_voucher"
-        android:icon="@drawable/ic_gift"
-        android:title="@string/gift_voucher" />
+<!--    <item-->
+<!--        android:id="@+id/gift_voucher"-->
+<!--        android:icon="@drawable/ic_gift"-->
+<!--        android:title="@string/gift_voucher" />-->
 
 <!--    <item-->
 <!--        android:id="@+id/Wallet"-->
 <!--        android:icon="@drawable/menu_wallet"-->
 <!--        android:title="Wallet" />-->
 
-    <item
-        android:id="@+id/my_earning"
-        android:icon="@drawable/grow_ic"
-        android:title="@string/my_earnings" />
+<!--    <item-->
+<!--        android:id="@+id/my_earning"-->
+<!--        android:icon="@drawable/grow_ic"-->
+<!--        android:title="@string/my_earnings" />-->
 
     <item
         android:id="@+id/Profile"

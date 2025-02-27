@@ -90,19 +90,10 @@
                 android:textSize="@dimen/_12sdp"
                 android:textColor="@color/black"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="At G-Five Technologies Enterprises, we strive to provide our customers with the best products and services. However, we understand that sometimes products may not meet your expectations. This Return and Refund Policy outlines the terms and conditions for returning products."
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:layout_marginTop="@dimen/_12sdp"/>
-
                 <com.gmwapp.slv_g5.helper.RichTestWidget
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:rtw_title="RETURN POLICY"
+                    app:rtw_title="Return Policy"
                     app:rtw_onNumber="1."
                     app:rtw_subTitle=""
                     app:rtw_description="Returns must be raised within 7 days of delivery."
@@ -114,7 +105,7 @@
                     app:rtw_title=""
                     app:rtw_onNumber="2."
                     app:rtw_subTitle=""
-                    app:rtw_description="The product must be in good condition, with all original tags, packaging, and accessories intact."
+                    app:rtw_description="Product must be in good condition with all original tags, packaging, and accessories intact."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
@@ -129,7 +120,7 @@
                 <com.gmwapp.slv_g5.helper.RichTestWidget
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:rtw_title="REFUND POLICY"
+                    app:rtw_title="Refund Policy"
                     app:rtw_onNumber="1."
                     app:rtw_subTitle=""
                     app:rtw_description="No refunds will be issued for any products."
@@ -141,13 +132,13 @@
                     app:rtw_title=""
                     app:rtw_onNumber="2."
                     app:rtw_subTitle=""
-                    app:rtw_description="Instead, customers can opt for a replacement of the same product or a different product of equal or lesser value."
+                    app:rtw_description="Instead, customers can opt for a replacement of the same product or a different product of equal or higher value by paying the difference amount."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:rtw_title="REPLACEMENT POLICY"
+                    app:rtw_title="Replacement Policy"
                     app:rtw_onNumber="1."
                     app:rtw_subTitle=""
                     app:rtw_description="Replacement products will be shipped only after the returned product is received and inspected by our team."
@@ -165,10 +156,19 @@
                 <com.gmwapp.slv_g5.helper.RichTestWidget
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:rtw_title="HOW TO RETURN A PRODUCT"
+                    app:rtw_title=""
+                    app:rtw_onNumber="3."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Replacement process will take an additional 7 days after receiving the returned product."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="How to Return a Product"
                     app:rtw_onNumber="1."
                     app:rtw_subTitle=""
-                    app:rtw_description="Contact our customer service team within 7 days of delivery to initiate the return process."
+                    app:rtw_description="Contact customer service within 7 days of delivery to initiate the return process."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
@@ -177,7 +177,7 @@
                     app:rtw_title=""
                     app:rtw_onNumber="2."
                     app:rtw_subTitle=""
-                    app:rtw_description="Provide the order number, product name, and reason for return."
+                    app:rtw_description="Provide order number, product name, and reason for return."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
@@ -192,10 +192,10 @@
                 <com.gmwapp.slv_g5.helper.RichTestWidget
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:rtw_title="EXCEPTIONS"
+                    app:rtw_title="Exceptions"
                     app:rtw_onNumber="1."
                     app:rtw_subTitle=""
-                    app:rtw_description="This Return and Refund Policy does not apply to products that are damaged or tampered with by the customer."
+                    app:rtw_description="This policy does not apply to products damaged or tampered with by the customer."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
@@ -204,7 +204,7 @@
                     app:rtw_title=""
                     app:rtw_onNumber="2."
                     app:rtw_subTitle=""
-                    app:rtw_description="Products that are sold as 'final sale' or 'as-is' are not eligible for returns or replacements."
+                    app:rtw_description="Products sold as 'final sale' or 'as-is' are not eligible for returns or replacements."
                     />
 
                 <com.gmwapp.slv_g5.helper.TitleAndContentText

@@ -8,16 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.gmwapp.slv_g5.Adapter.CategoryAdapter;
 import com.gmwapp.slv_g5.Adapter.ProductAdapter;
 import com.gmwapp.slv_g5.Adapter.SliderAdapter;
 import com.gmwapp.slv_g5.R;
 import com.gmwapp.slv_g5.helper.Session;
+import com.gmwapp.slv_g5.model.CategoryModel;
 import com.gmwapp.slv_g5.model.HomeProduct;
 import com.gmwapp.slv_g5.model.SliderItem;
 import com.google.android.material.button.MaterialButton;
@@ -44,9 +47,11 @@ public class HomeFragment extends Fragment {
     private Handler handler = new Handler();
     private Runnable slideRunnable;
 
-    private GridView gridView;  // Declare the GridView
+    private GridView gridView, gvCategories;  // Declare the GridView
+
+    private List<CategoryModel> categoryList = new ArrayList<>();
+    private CategoryAdapter categoryAdapter;
     private List<HomeProduct> homeProduct = new ArrayList<>();  // Declare product list
-    private ProductAdapter productAdapter;
 
     private View root;
 
@@ -66,29 +71,42 @@ public class HomeFragment extends Fragment {
         llWaiting.setVisibility(View.VISIBLE);
         frame.setVisibility(View.GONE);
 
+
         fetchSessionDataAndInitialize();
 //        imageList(); // Fetch and setup the slider
 
+        homeProduct.clear();
+
         // Add demo products
-        homeProduct.add(new HomeProduct(1, "Laptop", "Piece", "1", "999", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "High-performance laptop", "4.5"));
-        homeProduct.add(new HomeProduct(2, "Smartphone", "Piece", "1", "499", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Latest smartphone", "4.2"));
-        homeProduct.add(new HomeProduct(3, "Headphones", "Piece", "1", "199", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Noise-cancelling headphones", "4.3"));
-        homeProduct.add(new HomeProduct(4, "Smartwatch", "Piece", "1", "299", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
-        homeProduct.add(new HomeProduct(5, "Smartwatch", "Piece", "1", "299", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
-        homeProduct.add(new HomeProduct(6, "Smartwatch", "Piece", "1", "299", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
-        homeProduct.add(new HomeProduct(7, "Smartwatch", "Piece", "1", "299", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
-        homeProduct.add(new HomeProduct(8, "Smartwatch", "Piece", "1", "299", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
-        homeProduct.add(new HomeProduct(9, "Smartwatch", "Piece", "1", "299", "https://d2fy0k1bcbbnwr.cloudfront.net/Designs_Inners_and_Outers/Tshirts/Men/Men_Plain_Sunset_Orange_1.jpg", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
+        homeProduct.add(new HomeProduct(1, "Gift Voucher", "Piece", "1", "999", "https://img.freepik.com/premium-vector/gift-card-icon-flat-style_157943-15.jpg?w=1380", "2025-01-01", "2025-01-01", "High-performance laptop", "4.5"));
+        homeProduct.add(new HomeProduct(2, "Accessories", "Piece", "1", "499", "https://www.mate.net.in/public/uploads/all/UsReqZvujmEjMUb27qlTtRcCG8Pf18SyULO4HW7U.jpg", "2025-01-01", "2025-01-01", "Latest smartphone", "4.2"));
+        homeProduct.add(new HomeProduct(3, "Mobile Phone", "Piece", "1", "199", "https://5.imimg.com/data5/SELLER/Default/2021/9/HR/PW/SE/32162519/vivo-mobile-phone-1000x1000.png", "2025-01-01", "2025-01-01", "Noise-cancelling headphones", "4.3"));
+        homeProduct.add(new HomeProduct(4, "Home Appliances", "Piece", "1", "299", "https://media.istockphoto.com/id/1211554164/photo/3d-render-of-home-appliances-collection-set.jpg?s=612x612&w=0&k=20&c=blm3IyPyZo5ElWLOjI-hFMG-NrKQ0G76JpWGyNttF8s=", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
 
 
-        productAdapter = new ProductAdapter(getContext(), homeProduct, requireActivity().getSupportFragmentManager());
-        gridView.setAdapter(productAdapter);
+        categoryAdapter = new CategoryAdapter(getContext(), homeProduct, requireActivity().getSupportFragmentManager());
+        gridView.setAdapter(categoryAdapter);
 
         btnNotification.setOnClickListener(v -> navigateToNotificationFragment());
         btnMyOrders.setOnClickListener(v -> navigateToMyOrderFragment());
 
         return root;
     }
+
+//    private void setupCategories() {
+//        categoryList.add(new CategoryModel(1,"Gift Voucher", "https://img.freepik.com/premium-vector/gift-card-icon-flat-style_157943-15.jpg?w=1380"));
+//        categoryList.add(new CategoryModel(2, "Accessories", "https://www.mate.net.in/public/uploads/all/UsReqZvujmEjMUb27qlTtRcCG8Pf18SyULO4HW7U.jpg"));
+//        categoryList.add(new CategoryModel(3, "Mobile Phone", "https://5.imimg.com/data5/SELLER/Default/2021/9/HR/PW/SE/32162519/vivo-mobile-phone-1000x1000.png"));
+//        categoryList.add(new CategoryModel(4, "Home Appliances", "https://media.istockphoto.com/id/1211554164/photo/3d-render-of-home-appliances-collection-set.jpg?s=612x612&w=0&k=20&c=blm3IyPyZo5ElWLOjI-hFMG-NrKQ0G76JpWGyNttF8s="));
+//
+//        categoryAdapter = new CategoryAdapter(getContext(), categoryList, requireActivity().getSupportFragmentManager());
+//        gvCategories.setAdapter(categoryAdapter);
+//
+////        gvCategories.setOnItemClickListener((parent, view, position, id) -> {
+////            CategoryModel selectedCategory = categoryList.get(position);
+////            Toast.makeText(getContext(), "Clicked: " + selectedCategory.getName(), Toast.LENGTH_SHORT).show();
+////        });
+//    }
 
     private void fetchSessionDataAndInitialize() {
         new Handler().postDelayed(() -> {

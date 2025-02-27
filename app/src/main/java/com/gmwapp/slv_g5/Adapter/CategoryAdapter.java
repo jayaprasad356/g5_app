@@ -1,6 +1,7 @@
 package com.gmwapp.slv_g5.Adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bumptech.glide.Glide;
 import com.gmwapp.slv_g5.R;
 import com.gmwapp.slv_g5.fragment.ProductDetailsFragment;
+import com.gmwapp.slv_g5.fragment.ProductFragment;
 import com.gmwapp.slv_g5.model.CategoryModel;
 import com.gmwapp.slv_g5.model.HomeProduct;
 
@@ -22,11 +24,11 @@ import java.util.List;
 
 public class CategoryAdapter extends BaseAdapter {
     private Context context;
-    private List<CategoryModel> items;
+    private List<HomeProduct> items;
     private FragmentManager fragmentManager;  // Add FragmentManager
 
     // Constructor now accepts FragmentManager
-    public CategoryAdapter(Context context, List<CategoryModel> items, FragmentManager fragmentManager) {
+    public CategoryAdapter(Context context, List<HomeProduct> items, FragmentManager fragmentManager) {
         this.context = context;
         this.items = items;
         this.fragmentManager = fragmentManager;  // Initialize FragmentManager
@@ -61,11 +63,11 @@ public class CategoryAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        CategoryModel product = items.get(position);
+        HomeProduct product = items.get(position);
 
         // Set product details
         viewHolder.title.setText(product.getName());
-        viewHolder.price.setVisibility(View.GONE);
+        viewHolder.price.setText("₹ " + product.getPrice());
 
         // Load image using Glide
         Glide.with(context)
@@ -73,15 +75,22 @@ public class CategoryAdapter extends BaseAdapter {
                 .placeholder(R.drawable.image_icon)
                 .into(viewHolder.image);
 
-        // Set up the click listener for the item
         viewHolder.llItem.setOnClickListener(v -> {
-            // Perform fragment transaction to navigate to ProductDetailsFragment
+            // Create instance of ProductFragment
+            ProductFragment fragment = new ProductFragment();
+
+            // Create a Bundle to pass data
+            Bundle bundle = new Bundle();
+            bundle.putInt("product_id", product.getId()); // Pass the product ID
+            fragment.setArguments(bundle);
+
+            // Perform fragment transaction
             FragmentTransaction transaction = fragmentManager.beginTransaction();
-            ProductDetailsFragment fragment = new ProductDetailsFragment();
-            transaction.replace(R.id.Container, fragment);  // Replace with your fragment container ID
-            transaction.addToBackStack(null);  // Optional, if you want to add it to back stack
+            transaction.replace(R.id.Container, fragment);
+            transaction.addToBackStack(null);
             transaction.commit();
         });
+
 
         return view;
     }

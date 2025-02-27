@@ -380,9 +380,25 @@
             <com.gmwapp.slv_g5.helper.TitleAndContentText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:title="Contact Us"
+                app:title="GST Details"
                 app:description=
-                    "Don't hesitate to contact us if you have any questions. Via Email: support@slveenterprises.org Via Phone Number: 8867904715"
+                    "Firm : G-Five Technologies Enterprises"
+                />
+
+            <com.gmwapp.slv_g5.helper.TitleAndContentText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title=""
+                app:description=
+                    "GST No : 29CAJPM9971R1ZB"
+                />
+
+            <com.gmwapp.slv_g5.helper.TitleAndContentText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title=""
+                app:description=
+                    "Name : Madhu Sudhan"
                 />
 
             <com.gmwapp.slv_g5.helper.TitleAndContentText

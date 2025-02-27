@@ -1,6 +1,7 @@
 package com.gmwapp.slv_g5.Adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,13 +75,30 @@ public class ProductAdapter extends BaseAdapter {
 
         // Set up the click listener for the item
         viewHolder.llItem.setOnClickListener(v -> {
-            // Perform fragment transaction to navigate to ProductDetailsFragment
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            // Create instance of ProductDetailsFragment
             ProductDetailsFragment fragment = new ProductDetailsFragment();
-            transaction.replace(R.id.Container, fragment);  // Replace with your fragment container ID
-            transaction.addToBackStack(null);  // Optional, if you want to add it to back stack
+
+            // Get product details
+            String productName = product.getName();
+            String productPrice = product.getPrice();
+            String productImage = product.getImage();
+            String productDescription = product.getDescription();
+
+            // Create a Bundle to pass data
+            Bundle bundle = new Bundle();
+            bundle.putString("product_name", productName);
+            bundle.putString("product_price", productPrice);
+            bundle.putString("product_image", productImage);
+            bundle.putString("product_description", productDescription);
+            fragment.setArguments(bundle); // Attach the bundle to the fragment
+
+            // Perform fragment transaction
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.Container, fragment);
+            transaction.addToBackStack(null);
             transaction.commit();
         });
+
 
         return view;
     }

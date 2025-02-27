@@ -115,6 +115,7 @@
                                                     android:layout_marginRight="@dimen/_5sdp">
 
                                                     <TextView
+                                                        android:visibility="gone"
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:fontFamily="@font/poppins_regular"
@@ -150,6 +151,7 @@
                                                     android:layout_marginRight="@dimen/_5sdp">
 
                                                     <TextView
+                                                        android:visibility="gone"
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:text="-"
@@ -182,6 +184,7 @@
                                                     android:orientation="vertical">
 
                                                     <TextView
+                                                        android:visibility="gone"
                                                         android:id="@+id/tvTotalCodesIncome"
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"

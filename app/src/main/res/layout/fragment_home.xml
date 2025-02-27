@@ -130,6 +130,7 @@
         <!--            </LinearLayout>-->
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_10sdp">
@@ -207,6 +208,7 @@
         </RelativeLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -245,6 +247,7 @@
 
         <!-- GridView inside NestedScrollView -->
         <GridView
+            android:layout_marginTop="@dimen/_10sdp"
             android:id="@+id/gridView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
