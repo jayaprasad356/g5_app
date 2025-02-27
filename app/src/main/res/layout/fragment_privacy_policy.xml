@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:padding="@dimen/_10sdp">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_back"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_toEndOf="@id/ibBack"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Privacy Policy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+    </RelativeLayout>
+
+    <!-- Loading View -->
+    <LinearLayout
+        android:id="@+id/llWaiting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlToolbar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primaryColor"
+            app:indicatorSize="@dimen/_20sdp"
+            app:trackThickness="@dimen/_2sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/please_wait"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@+id/rlToolbar"
+        app:layout_constraintTop_toBottomOf="@id/rlToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_50sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Updated at 24-02-2025"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="G-FIVE Technologies Enterprises ('We', 'Us', 'Our') is committed to protecting the privacy and security of our customers' personal information. This Privacy Policy explains how we collect, use, and protect personal data, in accordance with the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 ('SPDI Rules') and the Information Technology Act, 2000."
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COLLECTION OF PERSONAL INFORMATION"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="We collect personal information from our customers, including:"
+                    app:description=
+                        "1. Contact information (name, email address, phone number, address)"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "2. Demographic information (age, location)"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "3. Transactional information (order history, payment details)"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "4. Device information (IP address, browser type, operating system)"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="USE OF PERSONAL INFORMATION"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="We use personal information to:"
+                    app:description=
+                        "1. Provide our products and services"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "2. Process transactions and payments"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "3. Communicate with customers"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "4. Improve our products and services"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "5. Comply with applicable laws and regulations"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SHARING OF PERSONAL INFORMATION"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="We may share personal information with:"
+                    app:description=
+                        "1. Our affiliates and subsidiaries"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "2. Third-party service providers (payment gateways, logistics providers)"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "3. Government agencies and law enforcement authorities (as required by law)"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SECURITY OF PERSONAL INFORMATION"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="We implement reasonable security practices and procedures to protect personal information from unauthorized access, disclosure, or destruction. These measures include:"
+                    app:description=
+                        "1. Encryption of sensitive data"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "2. Secure servers and data centers"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "3. Access controls and authentication mechanisms"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "4. Regular security audits and testing"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RETENTION OF PERSONAL INFORMATION"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "We retain personal information for as long as necessary to provide our products and services, comply with applicable laws and regulations, and resolve disputes."
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CUSTOMER RIGHTS"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title="Our customers have the right to:"
+                    app:description=
+                        "1. Access and correct their personal information"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "2. Opt-out of receiving marketing communications"
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "3. Request deletion of their personal information (subject to applicable laws and regulations)"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHANGES TO THIS PRIVACY POLICY"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "We may update this Privacy Policy from time to time. Changes will be effective immediately upon posting on our website."
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONTACT US"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "If you have any questions or concerns about this Privacy Policy, please contact our Data Protection Officer."
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title=""
+                    app:description=
+                        "By using our products and services, you acknowledge that you have read, understood, and agree to this Privacy Policy."
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

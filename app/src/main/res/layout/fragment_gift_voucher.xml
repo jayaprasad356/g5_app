@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:background="@color/BGColorBlue"
+    tools:context=".fragment.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/llWaiting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primaryColor"
+            app:indicatorSize="@dimen/_20sdp"
+            app:trackThickness="@dimen/_2sdp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/please_wait"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:src="@drawable/im_gift_voucher"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹300"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    android:gravity="start"
+                    android:fontFamily="@font/poppins_bold"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wallet_list_bg"
+        android:backgroundTint="@color/light_pink"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:paddingVertical="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvAmbassadors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹50"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ambassadors"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@drawable/wallet_list_bg"
+                android:backgroundTint="#E3E3E3"
+                android:paddingVertical="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp"/>
+
+            <TextView
+                android:id="@+id/tvAffiliates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹10"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Affiliates"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@drawable/wallet_list_bg"
+            android:backgroundTint="#E3E3E3"
+            android:paddingVertical="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_10sdp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹15"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customers"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@drawable/wallet_list_bg"
+                android:backgroundTint="#E3E3E3"
+                android:paddingVertical="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp"/>
+
+            <TextView
+                android:id="@+id/tvInfluencers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹5"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Influencers"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/poppins_medium"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:text="@string/history"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:fontFamily="@font/poppins_medium"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+</RelativeLayout>

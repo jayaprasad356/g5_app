@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:padding="@dimen/_10sdp">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_back"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_toEndOf="@id/ibBack"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Return and Refund Policy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+    </RelativeLayout>
+
+    <!-- Loading View -->
+    <LinearLayout
+        android:id="@+id/llWaiting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlToolbar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primaryColor"
+            app:indicatorSize="@dimen/_20sdp"
+            app:trackThickness="@dimen/_2sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/please_wait"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@+id/rlToolbar"
+        app:layout_constraintTop_toBottomOf="@id/rlToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_50sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Updated at 24-02-2025"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="At G-Five Technologies Enterprises, we strive to provide our customers with the best products and services. However, we understand that sometimes products may not meet your expectations. This Return and Refund Policy outlines the terms and conditions for returning products."
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_12sdp"/>
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="RETURN POLICY"
+                    app:rtw_onNumber="1."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Returns must be raised within 7 days of delivery."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="2."
+                    app:rtw_subTitle=""
+                    app:rtw_description="The product must be in good condition, with all original tags, packaging, and accessories intact."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="3."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Returns will be processed only if the product is in a resalable condition."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="REFUND POLICY"
+                    app:rtw_onNumber="1."
+                    app:rtw_subTitle=""
+                    app:rtw_description="No refunds will be issued for any products."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="2."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Instead, customers can opt for a replacement of the same product or a different product of equal or lesser value."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="REPLACEMENT POLICY"
+                    app:rtw_onNumber="1."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Replacement products will be shipped only after the returned product is received and inspected by our team."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="2."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Customers can choose to replace the product with the same product or a different product of same or higher value."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="HOW TO RETURN A PRODUCT"
+                    app:rtw_onNumber="1."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Contact our customer service team within 7 days of delivery to initiate the return process."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="2."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Provide the order number, product name, and reason for return."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="3."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Our team will guide you through the return process and provide a return shipping address."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="EXCEPTIONS"
+                    app:rtw_onNumber="1."
+                    app:rtw_subTitle=""
+                    app:rtw_description="This Return and Refund Policy does not apply to products that are damaged or tampered with by the customer."
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber="2."
+                    app:rtw_subTitle=""
+                    app:rtw_description="Products that are sold as 'final sale' or 'as-is' are not eligible for returns or replacements."
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:title=""
+                    app:description=
+                        "By purchasing from G-Five Technologies Enterprises, you acknowledge that you have read, understood, and agree to our Return and Refund Policy."
+                    />
+
+                <com.gmwapp.slv_g5.helper.TitleAndContentText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:title=""
+                    app:description=
+                        "If you have any questions or concerns, please contact our customer service team."
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
