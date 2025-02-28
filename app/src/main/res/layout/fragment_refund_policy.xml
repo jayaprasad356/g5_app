@@ -85,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Updated at 24-02-2025"
+                android:text="Updated at 28-02-2025"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="@dimen/_12sdp"
                 android:textColor="@color/black"/>
@@ -159,7 +159,7 @@
                     app:rtw_title=""
                     app:rtw_onNumber="3."
                     app:rtw_subTitle=""
-                    app:rtw_description="Replacement process will take an additional 7 days after receiving the returned product."
+                    app:rtw_description="Replacement process will take an additional 7 days after receiving the returned product. Replacement item will be shipped within 5-7 working days."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
@@ -178,15 +178,6 @@
                     app:rtw_onNumber="2."
                     app:rtw_subTitle=""
                     app:rtw_description="Provide order number, product name, and reason for return."
-                    />
-
-                <com.gmwapp.slv_g5.helper.RichTestWidget
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:rtw_title=""
-                    app:rtw_onNumber="3."
-                    app:rtw_subTitle=""
-                    app:rtw_description="Our team will guide you through the return process and provide a return shipping address."
                     />
 
                 <com.gmwapp.slv_g5.helper.RichTestWidget
