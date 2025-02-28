@@ -84,10 +84,10 @@ public class HomeFragment extends Fragment {
         homeProduct.clear();
 
         // Add demo products
-        homeProduct.add(new HomeProduct(1, "Best Deal", "Piece", "1", "999", "https://gqncpetg2pdu-u2278.pressidiumcdn.com/wp-content/uploads/2016/07/AFC-Importing-Electronics-1-7-7-16.jpg", "2025-01-01", "2025-01-01", "High-performance laptop", "4.5"));
-        homeProduct.add(new HomeProduct(2, "Accessories", "Piece", "1", "499", "https://www.mate.net.in/public/uploads/all/UsReqZvujmEjMUb27qlTtRcCG8Pf18SyULO4HW7U.jpg", "2025-01-01", "2025-01-01", "Latest smartphone", "4.2"));
-        homeProduct.add(new HomeProduct(3, "Mobile Phone", "Piece", "1", "199", "https://5.imimg.com/data5/SELLER/Default/2021/9/HR/PW/SE/32162519/vivo-mobile-phone-1000x1000.png", "2025-01-01", "2025-01-01", "Noise-cancelling headphones", "4.3"));
-        homeProduct.add(new HomeProduct(4, "Home Appliances", "Piece", "1", "299", "https://media.istockphoto.com/id/1211554164/photo/3d-render-of-home-appliances-collection-set.jpg?s=612x612&w=0&k=20&c=blm3IyPyZo5ElWLOjI-hFMG-NrKQ0G76JpWGyNttF8s=", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6"));
+        homeProduct.add(new HomeProduct(1, "Best Deal", "Piece", "1", "999", "https://gqncpetg2pdu-u2278.pressidiumcdn.com/wp-content/uploads/2016/07/AFC-Importing-Electronics-1-7-7-16.jpg", "2025-01-01", "2025-01-01", "High-performance laptop", "4.5",  "", null));
+        homeProduct.add(new HomeProduct(2, "Accessories", "Piece", "1", "499", "https://www.mate.net.in/public/uploads/all/UsReqZvujmEjMUb27qlTtRcCG8Pf18SyULO4HW7U.jpg", "2025-01-01", "2025-01-01", "Latest smartphone", "4.2", "", ""));
+        homeProduct.add(new HomeProduct(3, "Mobile Phone", "Piece", "1", "199", "https://5.imimg.com/data5/SELLER/Default/2021/9/HR/PW/SE/32162519/vivo-mobile-phone-1000x1000.png", "2025-01-01", "2025-01-01", "Noise-cancelling headphones", "4.3", "", null));
+        homeProduct.add(new HomeProduct(4, "Home Appliances", "Piece", "1", "299", "https://media.istockphoto.com/id/1211554164/photo/3d-render-of-home-appliances-collection-set.jpg?s=612x612&w=0&k=20&c=blm3IyPyZo5ElWLOjI-hFMG-NrKQ0G76JpWGyNttF8s=", "2025-01-01", "2025-01-01", "Fitness tracker", "4.6", "", null));
 
 
         categoryAdapter = new CategoryAdapter(getContext(), homeProduct, requireActivity().getSupportFragmentManager());

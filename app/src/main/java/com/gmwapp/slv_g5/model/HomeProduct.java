@@ -1,5 +1,7 @@
 package com.gmwapp.slv_g5.model;
 
+import com.google.firebase.database.annotations.Nullable;
+
 public class HomeProduct {
 
     private Integer id;
@@ -12,9 +14,13 @@ public class HomeProduct {
     private String createdAt;
     private String description;
     private String ratings;
+    private String discount_percentage;
+    @Nullable
+    private String mrp;
 
     public HomeProduct(Integer id, String name, String unit, String measurement, String price,
-                       String image, String updatedAt, String createdAt, String description, String ratings) {
+                       String image, String updatedAt, String createdAt, String description, String ratings,
+                       String discount_percentage, @Nullable String mrp) {
         this.id = id;
         this.name = name;
         this.unit = unit;
@@ -25,6 +31,8 @@ public class HomeProduct {
         this.createdAt = createdAt;
         this.description = description;
         this.ratings = ratings;
+        this.discount_percentage = discount_percentage;
+        this.mrp = mrp;
     }
 
     // Getters and Setters
@@ -106,5 +114,22 @@ public class HomeProduct {
 
     public void setRatings(String ratings) {
         this.ratings = ratings;
+    }
+
+    public String getDiscountPercentage() {
+        return discount_percentage;
+    }
+
+    public void setDiscountPercentage(String discount_percentage) {
+        this.discount_percentage = discount_percentage;
+    }
+
+    @Nullable
+    public String getMrp() {
+        return mrp;
+    }
+
+    public void setMrp(@Nullable String mrp) {
+        this.mrp = mrp;
     }
 }

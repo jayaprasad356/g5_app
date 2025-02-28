@@ -216,6 +216,33 @@
                         "If you have any questions or concerns, please contact our customer service team."
                     />
 
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="Contact Detail"
+                    app:rtw_onNumber=""
+                    app:rtw_subTitle="Contact No: 9019638330"
+                    app:rtw_description=""
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title=""
+                    app:rtw_onNumber=""
+                    app:rtw_subTitle="Email ID: gfivetechnologiesmys@gmail.com"
+                    app:rtw_description=""
+                    />
+
+                <com.gmwapp.slv_g5.helper.RichTestWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rtw_title="Contact Detail"
+                    app:rtw_onNumber=""
+                    app:rtw_subTitle="Address: "
+                    app:rtw_description="2385/C, G-FIVE TECHNOLOGIES ENTERPRISES, 7TH CROSS ROAD, Mysuru, Mysuru, Karnataka, 570009"
+                    />
+
             </LinearLayout>
 
         </RelativeLayout>
