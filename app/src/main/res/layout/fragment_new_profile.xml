@@ -138,7 +138,7 @@
                                                         android:layout_height="wrap_content"
                                                         android:fontFamily="@font/poppins_regular"
                                                         android:gravity="start"
-                                                        android:text="@string/main_wallet_balance"
+                                                        android:text="@string/total_commission_earnings"
                                                         android:textColor="@color/white"
                                                         android:textSize="@dimen/_12sdp" />
 
@@ -592,7 +592,7 @@
                             android:id="@+id/rlLevelIncome"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_40sdp"
-                            android:visibility="gone">
+                            android:visibility="visible">
 
                             <LinearLayout
                                 android:gravity="center"
@@ -635,7 +635,7 @@
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_10sdp"
-                            android:visibility="gone"/>
+                            android:visibility="visible"/>
 
                         <RelativeLayout
                             android:gravity="center"

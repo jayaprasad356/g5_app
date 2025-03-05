@@ -83,6 +83,8 @@ public class ProductAdapter extends BaseAdapter {
             String productPrice = product.getPrice();
             String productImage = product.getImage();
             String productDescription = product.getDescription();
+            String discountPercentage = product.getDiscountPercentage();
+            String mrp = product.getMrp();
 
             // Create a Bundle to pass data
             Bundle bundle = new Bundle();
@@ -90,6 +92,8 @@ public class ProductAdapter extends BaseAdapter {
             bundle.putString("product_price", productPrice);
             bundle.putString("product_image", productImage);
             bundle.putString("product_description", productDescription);
+            bundle.putString("discount_percentage", discountPercentage);
+            bundle.putString("mrp", mrp);
             fragment.setArguments(bundle); // Attach the bundle to the fragment
 
             // Perform fragment transaction

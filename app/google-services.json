@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "909762205579",
-    "project_id": "aidi-1d27e",
-    "storage_bucket": "aidi-1d27e.firebasestorage.app"
+    "project_number": "1068799829100",
+    "project_id": "g-five-59965",
+    "storage_bucket": "g-five-59965.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:909762205579:android:7240901edd81db53e2018e",
+        "mobilesdk_app_id": "1:1068799829100:android:b254187d037c867feea449",
         "android_client_info": {
           "package_name": "com.gmwapp.slv_g5"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyABB440Mh2hr3azmeJcSYH0yXhtajwCrSA"
+          "current_key": "AIzaSyD-i8QQ-LNlxdyc3t7106VF_y0ldnQL1Kk"
         }
       ],
       "services": {

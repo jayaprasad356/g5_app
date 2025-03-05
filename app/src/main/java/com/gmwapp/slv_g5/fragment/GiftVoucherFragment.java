@@ -21,6 +21,7 @@ import com.gmwapp.slv_g5.R;
 import com.gmwapp.slv_g5.helper.ApiConfig;
 import com.gmwapp.slv_g5.helper.Constant;
 import com.gmwapp.slv_g5.helper.Session;
+import com.gmwapp.slv_g5.model.GiftVoucherModel;
 import com.gmwapp.slv_g5.model.Transanction;
 import com.google.gson.Gson;
 
@@ -30,14 +31,17 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GiftVoucherFragment extends Fragment {
 
     RecyclerView rvTransaction;
+    private List<GiftVoucherModel> giftVoucherModel = new ArrayList<>();  // Declare product list
     GiftVoucherAdapter giftVoucherAdapter;
     Activity activity;
     Session session;
+    TextView tvBonusWallet;
 
 
 
@@ -58,46 +62,61 @@ public class GiftVoucherFragment extends Fragment {
         session = new Session(activity);
 
         rvTransaction = root.findViewById(R.id.rvTransaction);
+        tvBonusWallet = root.findViewById(R.id.tvBonusWallet);
+
+        tvBonusWallet.setText("₹50");
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         rvTransaction.setLayoutManager(linearLayoutManager);
 
-        transactionList();
+//        transactionList();
+        demoItemList();
 
         return root;
     }
 
-    private void transactionList()
-    {
-        Map<String, String> params = new HashMap<>();
-        params.put(Constant.USER_ID,session.getData(Constant.USER_ID));
-        ApiConfig.RequestToVolley((result, response) -> {
-            if (result) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    if (jsonObject.getBoolean(SUCCESS)) {
-                        JSONArray jsonArray = jsonObject.getJSONArray(Constant.DATA);
-                        ArrayList<Transanction> transanctions = new ArrayList<>();
-                        Gson g = new Gson();
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                            if (jsonObject1 != null) {
-                                Transanction group = g.fromJson(jsonObject1.toString(), Transanction.class);
-                                transanctions.add(group);
-                            } else {
-                                break;
-                            }
-                        }
-                        giftVoucherAdapter = new GiftVoucherAdapter(activity,transanctions);
-                        rvTransaction.setAdapter(giftVoucherAdapter);
+    private void demoItemList() {
+        giftVoucherModel.clear();
 
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, activity, Constant.TRNSACTION_LIST_URL, params, true);
-        Log.d("TRNSACTION_LIST_URL", "TRNSACTION_LIST_URL: " + Constant.TRNSACTION_LIST_URL);
-        Log.d("TRNSACTION_LIST_URL", "TRNSACTION_LIST_URL params: " + params);
+        giftVoucherModel.add(new GiftVoucherModel("1", "1", "Alec", "50", "2025-01-01 22:48:30", "Ambassadors"));
+        giftVoucherModel.add(new GiftVoucherModel("2", "2", "Lana", "15", "2025-01-01 22:48:30", "Customer"));
+
+
+        giftVoucherAdapter = new GiftVoucherAdapter(getContext(), giftVoucherModel);
+        rvTransaction.setAdapter(giftVoucherAdapter);
     }
+
+//    private void transactionList()
+//    {
+//        Map<String, String> params = new HashMap<>();
+//        params.put(Constant.USER_ID,session.getData(Constant.USER_ID));
+//        ApiConfig.RequestToVolley((result, response) -> {
+//            if (result) {
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    if (jsonObject.getBoolean(SUCCESS)) {
+//                        JSONArray jsonArray = jsonObject.getJSONArray(Constant.DATA);
+//                        ArrayList<Transanction> transanctions = new ArrayList<>();
+//                        Gson g = new Gson();
+//                        for (int i = 0; i < jsonArray.length(); i++) {
+//                            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+//                            if (jsonObject1 != null) {
+//                                Transanction group = g.fromJson(jsonObject1.toString(), Transanction.class);
+//                                transanctions.add(group);
+//                            } else {
+//                                break;
+//                            }
+//                        }
+//                        giftVoucherAdapter = new GiftVoucherAdapter(activity,transanctions);
+//                        rvTransaction.setAdapter(giftVoucherAdapter);
+//
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }, activity, Constant.TRNSACTION_LIST_URL, params, true);
+//        Log.d("TRNSACTION_LIST_URL", "TRNSACTION_LIST_URL: " + Constant.TRNSACTION_LIST_URL);
+//        Log.d("TRNSACTION_LIST_URL", "TRNSACTION_LIST_URL params: " + params);
+//    }
 }

@@ -129,20 +129,23 @@
                         android:textSize="@dimen/_15sdp" />
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcDiscount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         app:cardBackgroundColor="@color/green"
                         app:cardCornerRadius="@dimen/_5sdp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_3sdp"
-                            android:fontFamily="@font/poppins_medium"
-                            android:text="15 % discount"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp" />
+                    <TextView
+                        android:id="@+id/tvDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_3sdp"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="15 % discount"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
 
                     </com.google.android.material.card.MaterialCardView>
 
@@ -162,13 +165,14 @@
                             android:textSize="@dimen/_17sdp" />
 
                         <TextView
-                            android:layout_marginStart="@dimen/_10sdp"
+                            android:id="@+id/tvMrp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="₹ 1099"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_10sdp" />
+                            android:text="MRP: ₹ 1099"
+                            android:textColor="@color/greyText"
+                            android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
 
@@ -217,7 +221,7 @@
                     android:textSize="@dimen/_10sdp"/>
 
                 <TextView
-                    android:id="@+id/tvMrp"
+                    android:id="@+id/tvBillMrp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

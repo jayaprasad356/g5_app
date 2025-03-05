@@ -259,6 +259,8 @@
     <string name="commission_earnings">Commission Earnings</string>
     <string name="my_orders">My Orders</string>
     <string name="category">Category</string>
+    <string name="product_earnings">Product Earnings</string>
+    <string name="total_commission_earnings">Total Commission Earnings</string>
 
     <string-array name="my_spinner_values">
         <item>Select Amount</item>

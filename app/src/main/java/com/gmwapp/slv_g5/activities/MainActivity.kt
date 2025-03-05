@@ -92,10 +92,10 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.Home -> fm!!.beginTransaction().replace(
                     R.id.Container, HomeFragment()).commitAllowingStateLoss()
-//                R.id.gift_voucher -> fm!!.beginTransaction().replace(
-//                    R.id.Container, GiftVoucherFragment()).commitAllowingStateLoss()
-//                R.id.my_earning -> fm!!.beginTransaction().replace(
-//                    R.id.Container, MyEarningFragment()).commitAllowingStateLoss()
+                R.id.gift_voucher -> fm!!.beginTransaction().replace(
+                    R.id.Container, GiftVoucherFragment()).commitAllowingStateLoss()
+                R.id.my_earning -> fm!!.beginTransaction().replace(
+                    R.id.Container, MyEarningFragment()).commitAllowingStateLoss()
                 R.id.Profile -> fm!!.beginTransaction().replace(
                     R.id.Container, NewProfileFragment()).commitAllowingStateLoss()
             }

@@ -38,8 +38,10 @@ class LevelIncomeFragment : Fragment() {
     private lateinit var outsourceAdapter: OutsourceLevelDataAdapter
 
     private val levelTypeList = listOf(
-        LevelTypeData("b", "Level 1 (5%)"),
-        LevelTypeData("c", "Level 2 (2%)"),
+        LevelTypeData("b", "Ambassadors"),
+        LevelTypeData("c", "Customers"),
+        LevelTypeData("c", "Affiliates"),
+        LevelTypeData("c", "Influencers"),
     )
 
     override fun onCreateView(

@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gmwapp.slv_g5.R;
+import com.gmwapp.slv_g5.model.GiftVoucherModel;
 import com.gmwapp.slv_g5.model.Transanction;
 
 import java.util.List;
@@ -18,11 +19,11 @@ import java.util.List;
 public class GiftVoucherAdapter extends RecyclerView.Adapter<GiftVoucherAdapter.TransactionViewHolder> {
 
     private final Context context;
-    private final List<Transanction> transactionList;
+    private final List<GiftVoucherModel> giftVoucherModel;
 
-    public GiftVoucherAdapter(Context context, List<Transanction> transactionList) {
+    public GiftVoucherAdapter(Context context, List<GiftVoucherModel> giftVoucherModel) {
         this.context = context;
-        this.transactionList = transactionList;
+        this.giftVoucherModel = giftVoucherModel;
     }
 
     @NonNull
@@ -34,47 +35,19 @@ public class GiftVoucherAdapter extends RecyclerView.Adapter<GiftVoucherAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull TransactionViewHolder holder, int position) {
-        Transanction transaction = transactionList.get(position);
+        GiftVoucherModel giftVoucher = giftVoucherModel.get(position);
 
         // Bind the data to the views
-        holder.tvStatus.setText(getStatusTitle(transaction.getType(), transaction.getCodes()));
-        holder.tvType.setText(transaction.getDatetime());
-        holder.tvAmount.setText("₹" + transaction.getAmount());
-        holder.tvDateTime.setText(transaction.getDatetime());
+        holder.tvStatus.setText(giftVoucher.getName());
+        holder.tvType.setText(giftVoucher.getType());
+        holder.tvAmount.setText("₹" + giftVoucher.getAmount());
+        holder.tvDateTime.setText(giftVoucher.getDatetime());
         holder.ivImage.setImageResource(R.drawable.menu_user);
     }
 
     @Override
     public int getItemCount() {
-        return transactionList.size();
-    }
-
-    private String getStatusTitle(String type, String code) {
-        switch (type) {
-            case "earning_wallet":
-                return "Earning Wallet to Balance";
-            case "bonus_wallet":
-                return "Bonus wallet to Balance";
-            case "refer_bonus":
-                return "Refer Bonus";
-            case "recharge":
-                return "Recharge";
-            case "plan_activated":
-                return "Plan activated";
-            case "sync_wallet":
-            case "Generated":
-                return "Sync Amount to Earning Wallet";
-            case "cancelled":
-                return "Cancelled withdrawal amount credited";
-            case "admin_credit_balance":
-                return "Amount credited by admin";
-            case "level_income":
-                return "Level Income to Bonus Wallet";
-            case "outsource_earnings":
-                return "Outsource Earnings to Earning Wallet";
-            default:
-                return "Transaction";
-        }
+        return giftVoucherModel.size();
     }
 
     static class TransactionViewHolder extends RecyclerView.ViewHolder {

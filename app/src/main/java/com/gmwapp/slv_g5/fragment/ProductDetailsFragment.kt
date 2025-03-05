@@ -1,5 +1,6 @@
 package com.gmwapp.slv_g5.fragment
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -22,6 +23,8 @@ class ProductDetailsFragment : Fragment() {
     private var productPrice: String? = null
     private var productImage: String? = null
     private var productDescription: String? = null
+    private var discountPercentage: String? = null
+    private var mrp: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +38,8 @@ class ProductDetailsFragment : Fragment() {
             productPrice = requireArguments().getString("product_price")
             productImage = requireArguments().getString("product_image")
             productDescription = requireArguments().getString("product_description")
+            discountPercentage = requireArguments().getString("discount_percentage")
+            mrp = requireArguments().getString("mrp")
 
             Log.d("ProductDetailsFragment", "Received Product Name: $productName")
             Log.d("ProductDetailsFragment", "Received Product Price: $productPrice")
@@ -51,8 +56,20 @@ class ProductDetailsFragment : Fragment() {
         binding.ibBack.setOnClickListener { requireActivity().onBackPressed() }
 
         binding.tvProductName.setText(productName)
-        binding.tvPrice.setText(productPrice)
+        binding.tvPrice.setText("₹" + productPrice)
         binding.tvDescription.setText(productDescription)
+        binding.tvMrp.setText("MRP: ₹" + mrp)
+        binding.tvDiscount.setText(discountPercentage + " discount")
+
+        binding.tvMrp.paintFlags = binding.tvMrp.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+
+        if(mrp?.isEmpty() == true || mrp == "") {
+            binding.tvMrp.visibility = View.GONE
+        }
+
+        if(discountPercentage?.isEmpty() == true || mrp == "") {
+            binding.mcDiscount.visibility = View.GONE
+        }
 
         // Load image using Glide
         Glide.with(requireContext())
@@ -65,7 +82,7 @@ class ProductDetailsFragment : Fragment() {
         Handler().postDelayed({
             binding.llWaiting.setVisibility(View.GONE)
             binding.frame.setVisibility(View.VISIBLE)
-        }, 2000)
+        }, 1000)
 
         binding.btBuyNow.setOnClickListener {
             // Create instance of BillFragment
@@ -77,6 +94,8 @@ class ProductDetailsFragment : Fragment() {
             bundle.putString("product_price", productPrice)
             bundle.putString("product_image", productImage)
             bundle.putString("product_description", productDescription)
+            bundle.putString("discount_percentage", discountPercentage)
+            bundle.putString("mrp", mrp)
             billFragment.arguments = bundle
 
             // Perform fragment transaction

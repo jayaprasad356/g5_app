@@ -1,5 +1,6 @@
 package com.gmwapp.slv_g5.fragment
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -26,6 +27,8 @@ class BillFragment : Fragment() {
     private var productPrice: String? = null
     private var productImage: String? = null
     private var productDescription: String? = null
+    private var discountPercentage: String? = null
+    private var mrp: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +42,8 @@ class BillFragment : Fragment() {
             productPrice = requireArguments().getString("product_price")
             productImage = requireArguments().getString("product_image")
             productDescription = requireArguments().getString("product_description")
+            discountPercentage = requireArguments().getString("discount_percentage")
+            mrp = requireArguments().getString("mrp")
 
             Log.d("ProductDetailsFragment", "Received Product Name: $productName")
             Log.d("ProductDetailsFragment", "Received Product Price: $productPrice")
@@ -76,6 +81,18 @@ class BillFragment : Fragment() {
 
         binding.tvName.setText(productName)
         binding.tvPrice.setText(productPrice)
+        binding.tvMrp.setText("MRP: ₹" + mrp)
+        binding.tvDiscount.setText(discountPercentage + " discount")
+
+        binding.tvMrp.paintFlags = binding.tvMrp.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+
+        if(mrp?.isEmpty() == true || mrp == "") {
+            binding.tvMrp.visibility = View.GONE
+        }
+
+        if(discountPercentage?.isEmpty() == true || mrp == "") {
+            binding.mcDiscount.visibility = View.GONE
+        }
 
         binding.btnEditAddress.setOnClickListener({
             // Replace current fragment with billFragment

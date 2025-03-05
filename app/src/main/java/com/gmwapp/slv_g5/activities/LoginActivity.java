@@ -209,6 +209,7 @@ public class LoginActivity extends AppCompatActivity implements PopupMenu.OnMenu
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Log.d("LOGIN_URL", "LOGIN_URL: " + e.getMessage());
                     Toast.makeText(activity, "Error catch " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             } else {

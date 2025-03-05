@@ -20,9 +20,9 @@ public class Constant {
     public static final String WITHDRAWAL_DEMO_VIDEO_URL = "https://youtu.be/rL7GRdXq6Gg?si=Jqt4FBuh0D7KLId4";
     public static final String WHATSAPP_URL = "https://whatsapp.com/channel/0029VawJ9ZtJpe8ecl0Vb13w";
     public static final String PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.gmwapp.slv_g5";
-    public static final String ZOHO_API_KEY = "5spwCGjIKo9MXeJ2dkU8w0NmVLDim0iOdTmghD8gr0X3M139Vd3n7VeUtG2mB9ta_in";
-    public static final String ZOHO_ACCESS_KEY = "xHGPBNAi6lDz6gXI7WkYM2bZU9ZUKhjBNVVWEgMrGlT1D7GdxbzXs3kUA4LqV%2FJpCLJ7uFqkmdKG69kLbNjf7rrj5xl9gR3B7A1R%2B4i9ZbOZAG1jlgcjMg%3D%3D";
-    public static final String MainBaseUrl = "https://admin.aidiapp.in/";
+    public static final String ZOHO_API_KEY = "fm%2FWE9NcocXvHD4jmKWMYGusTlyYPQKdUJ%2Fhkp8GNr1e9%2BM0Y6NlwRu6Ih6Vfee3_in";
+    public static final String ZOHO_ACCESS_KEY = "xHGPBNAi6lA4R5%2By4ity%2BmMpZmNj3AjFRsY7kuqvbCSRiuBk9SMmr2fks3O%2B%2FNzssgNDMC%2BKvYuIreLn7P%2BTCwdu6nUC%2FiQda5BQqIoq4bzYtosiNrbxdA%3D%3D";
+    public static final String MainBaseUrl = "https://admin.gfive.shop/";
 
 
 
